@@ -1,7 +1,7 @@
-/**
+/*
 * @license Apache-2.0
 *
-* Copyright (c) 2018 The Stdlib Authors.
+* Copyright (c) 2021 The Stdlib Authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -16,16 +16,21 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 2.0
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
+
+import { ArrayLike } from '@stdlib/types/array';
 
 /**
-* Compute the minimum and maximum linear indices in an underlying data buffer which are accessible to an array view.
+* Computes the minimum and maximum linear indices in an underlying data buffer which are accessible to an array view.
 *
-* @module @stdlib/ndarray-base-minmax-view-buffer-index
+* @param shape - array shape
+* @param strides - stride array
+* @param offset - index offset
+* @returns linear indices
 *
 * @example
-* var minmaxViewBufferIndex = require( '@stdlib/ndarray-base-minmax-view-buffer-index' );
-*
 * var shape = [ 10, 10 ];
 * var strides = [ 10, 1 ];
 * var offset = 10;
@@ -34,8 +39,6 @@
 * // returns [ 10, 109 ]
 *
 * @example
-* var minmaxViewBufferIndex = require( '@stdlib/ndarray-base-minmax-view-buffer-index' );
-*
 * var shape = [ 10, 10 ];
 * var strides = [ -10, -1 ];
 * var offset = 99;
@@ -44,8 +47,6 @@
 * // returns [ 0, 99 ]
 *
 * @example
-* var minmaxViewBufferIndex = require( '@stdlib/ndarray-base-minmax-view-buffer-index' );
-*
 * var shape = [ 10, 10 ];
 * var strides = [ 1, 10 ];
 * var offset = 10;
@@ -54,8 +55,6 @@
 * // returns [ 10, 109 ]
 *
 * @example
-* var minmaxViewBufferIndex = require( '@stdlib/ndarray-base-minmax-view-buffer-index' );
-*
 * var shape = [ 10, 10 ];
 * var strides = [ -1, -10 ];
 * var offset = 99;
@@ -63,19 +62,9 @@
 * var idx = minmaxViewBufferIndex( shape, strides, offset );
 * // returns [ 0, 99 ]
 */
-
-// MODULES //
-
-var setReadOnly = require( '@stdlib/utils-define-nonenumerable-read-only-property' );
-var main = require( './main.js' );
-var assign = require( './assign.js' );
-
-
-// MAIN //
-
-setReadOnly( main, 'assign', assign );
+declare function minmaxViewBufferIndex( shape: ArrayLike<number>, strides: ArrayLike<number>, offset: number ): Array<number>; // tslint-disable-line max-line-length
 
 
 // EXPORTS //
 
-module.exports = main;
+export = minmaxViewBufferIndex;
