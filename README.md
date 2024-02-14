@@ -45,20 +45,32 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/ndarray-base-minmax-view-buffer-index
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import minmaxViewBufferIndex from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-minmax-view-buffer-index@deno/mod.js';
-```
-
-You can also import the following named exports from the package:
-
-```javascript
-import { assign } from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-minmax-view-buffer-index@deno/mod.js';
+var minmaxViewBufferIndex = require( '@stdlib/ndarray-base-minmax-view-buffer-index' );
 ```
 
 #### minmaxViewBufferIndex( shape, strides, offset )
@@ -117,11 +129,11 @@ var bool = ( idx === out );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@deno/mod.js';
-import shape2strides from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-shape2strides@deno/mod.js';
-import strides2offset from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-strides2offset@deno/mod.js';
-import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@deno/mod.js';
-import minmaxViewBufferIndex from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-minmax-view-buffer-index@deno/mod.js';
+var discreteUniform = require( '@stdlib/random-base-discrete-uniform' );
+var shape2strides = require( '@stdlib/ndarray-base-shape2strides' );
+var strides2offset = require( '@stdlib/ndarray-base-strides2offset' );
+var randu = require( '@stdlib/random-base-randu' );
+var minmaxViewBufferIndex = require( '@stdlib/ndarray-base-minmax-view-buffer-index' );
 
 var strides;
 var offset;
@@ -162,7 +174,106 @@ for ( i = 0; i < 100; i++ ) {
 
 <!-- C interface documentation. -->
 
+* * *
 
+<section class="c">
+
+## C APIs
+
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/ndarray/base/minmax_view_buffer_index.h"
+```
+
+#### stdlib_ndarray_minmax_view_buffer_index( ndims, \*shape, \*strides, offset, \*out )
+
+Computes the minimum and maximum linear indices (in bytes) in an underlying data buffer accessible to an array view.
+
+```c
+int64_t ndims = 2;
+int64_t shape[] = { 10, 10 };
+int64_t strides[] = { 10, 1 };
+int64_t offset = 0;
+int64_t out[ 2 ];
+
+stdlib_ndarray_minmax_view_buffer_index( ndims, shape, strides, offset, out );
+
+int64_t min = out[ 0 ];
+// returns 0
+
+int64_t max = out[ 1 ];
+// returns 99
+```
+
+The function accepts the following arguments:
+
+-   **ndims**: `[in] int64_t` number of dimensions.
+-   **shape**: `[in] int64_t*` array shape (dimensions).
+-   **strides**: `[in] int64_t*` array strides (in bytes).
+-   **offset**: `[in] int64_t` index offset.
+-   **out**: `[out] int64_t*` two-element output array.
+
+```c
+int8_t stdlib_ndarray_minmax_view_buffer_index( int64_t ndims, int64_t *shape, int64_t *strides, int64_t offset, int64_t *out );
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/ndarray/base/minmax_view_buffer_index.h"
+#include <stdio.h>
+#include <inttypes.h>
+
+int main( void ) {
+    int64_t ndims = 2;
+    int64_t shape[] = { 10, 10 };
+    int64_t strides[] = { 10, 1 };
+    int64_t offset = 0;
+    int64_t out[ 2 ];
+
+    stdlib_ndarray_minmax_view_buffer_index( ndims, shape, strides, offset, out );
+
+    printf( "min: %"PRId64"\n", out[ 0 ] );
+    printf( "max: %"PRId64"\n", out[ 1 ] );
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
 
 <!-- Section to include cited references. If references are included, add a horizontal rule *before* the section. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
 
@@ -189,7 +300,7 @@ for ( i = 0; i < 100; i++ ) {
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -219,8 +330,8 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/ndarray-base-minmax-view-buffer-index.svg
 [npm-url]: https://npmjs.org/package/@stdlib/ndarray-base-minmax-view-buffer-index
 
-[test-image]: https://github.com/stdlib-js/ndarray-base-minmax-view-buffer-index/actions/workflows/test.yml/badge.svg?branch=main
-[test-url]: https://github.com/stdlib-js/ndarray-base-minmax-view-buffer-index/actions/workflows/test.yml?query=branch:main
+[test-image]: https://github.com/stdlib-js/ndarray-base-minmax-view-buffer-index/actions/workflows/test.yml/badge.svg?branch=v0.2.0
+[test-url]: https://github.com/stdlib-js/ndarray-base-minmax-view-buffer-index/actions/workflows/test.yml?query=branch:v0.2.0
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/ndarray-base-minmax-view-buffer-index/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/ndarray-base-minmax-view-buffer-index?branch=main
