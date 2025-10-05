@@ -4,15 +4,15 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-09-01)
+## Unreleased (2025-10-05)
 
 <section class="issues">
 
 ### Closed Issues
 
-This release closes the following issue:
+A total of 2 issues were closed in this release:
 
-[#7626](https://github.com/stdlib-js/stdlib/issues/7626)
+[#7626](https://github.com/stdlib-js/stdlib/issues/7626), [#8196](https://github.com/stdlib-js/stdlib/issues/8196)
 
 </section>
 
@@ -24,6 +24,7 @@ This release closes the following issue:
 
 <details>
 
+-   [`0ccda74`](https://github.com/stdlib-js/stdlib/commit/0ccda74155ae15d3258c06cef82cbd08f5f3a730) - **chore:** fix C lint errors [(#8199)](https://github.com/stdlib-js/stdlib/pull/8199) _(by GeoDaoyu, Athan Reines)_
 -   [`7add020`](https://github.com/stdlib-js/stdlib/commit/7add0201c13e56a0381926ccfd4073c84eaf2ed4) - **test:** use standardized assertion messages and fix lint errors _(by Philipp Burckhardt)_
 -   [`097c6fb`](https://github.com/stdlib-js/stdlib/commit/097c6fbd4f91e243d6c8a62f5e2abed0ee3d82df) - **chore:** fix C lint errors [(#7630)](https://github.com/stdlib-js/stdlib/pull/7630) _(by GeoDaoyu, Athan Reines)_
 -   [`a937794`](https://github.com/stdlib-js/stdlib/commit/a937794d19a04066bdc0b63349283d2e0af5a350) - **docs:** update signature _(by Athan Reines)_
