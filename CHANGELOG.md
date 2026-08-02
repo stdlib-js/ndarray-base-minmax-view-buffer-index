@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-07-05)
+## Unreleased (2026-08-02)
 
 <section class="commits">
 
@@ -12,6 +12,7 @@
 
 <details>
 
+-   [`7ae11bc`](https://github.com/stdlib-js/stdlib/commit/7ae11bca9e05607a14425d165dfed57584b880b8) - **chore:** clean-up [(#13834)](https://github.com/stdlib-js/stdlib/pull/13834) _(by Philipp Burckhardt)_
 -   [`510d710`](https://github.com/stdlib-js/stdlib/commit/510d7100ba882850675520a6fe8be6219fb05076) - **docs:** propagate recent develop fixes to sibling packages [(#12400)](https://github.com/stdlib-js/stdlib/pull/12400) _(by Philipp Burckhardt)_
 -   [`13ec30d`](https://github.com/stdlib-js/stdlib/commit/13ec30d69ff91423504ba76bf5de59b0322ff8db) - **bench:** refactor to use string interpolation in `@stdlib/ndarray-base` [(#11435)](https://github.com/stdlib-js/stdlib/pull/11435) _(by Karan Anand)_
 
